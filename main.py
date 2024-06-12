@@ -39,9 +39,9 @@ entry_widget_height.place(x=275, y=80, width=91)
 def user_inputs():
     try:
         kg = int(entry_widget_weight.get())
-        boy = int(entry_widget_height.get())
-        boy_float = boy/100
-        bmi = kg/(boy_float*boy_float)
+        cm = int(entry_widget_height.get())
+        cm_float = cm/100
+        bmi = kg/(cm_float*cm_float)
 
         if bmi < 18.5:
 
@@ -80,7 +80,7 @@ def user_inputs():
             label_widget_result.place(x=35, y=180)
 
         label_widget_bottom = tkinter.Label()
-        label_widget_bottom.config(text=f"Your BMI : {bmi}")
+        label_widget_bottom.config(text=f"Your BMI : {round(bmi,2)}")
         label_widget_bottom.place(x=35, y=150)
 
     except:
